@@ -101,3 +101,18 @@ markdown语法非常好学，几分钟跟着就可以学习了，几乎所有的
 
 <img src="C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201129225723572.png" alt="image-20201129225723572" style="zoom:50%;" />
 
+# 2 Static
+
+- static先于对象被系统加载，所以静态方法不能调用非静态的，但是非静态的可以调用静态的
+
+![image-20201203075604403](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203075604403.png)
+
+## 2.1 静态代码块
+
+![image-20201203075819751](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203075819751.png)
+
+# 3 抽象类
+
+![image-20201203100950348](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203100950348.png)
+
+![image-20201203183621632](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203183621632.png)
