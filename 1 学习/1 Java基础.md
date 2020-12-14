@@ -116,3 +116,8 @@ markdown语法非常好学，几分钟跟着就可以学习了，几乎所有的
 ![image-20201203100950348](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203100950348.png)
 
 ![image-20201203183621632](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203183621632.png)
+
+# 4 Exception
+
+![image-20201214144828928](https://i.loli.net/2020/12/14/lfWjG8QeNzKgBTn.png)
+
