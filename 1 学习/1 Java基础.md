@@ -99,25 +99,32 @@ markdown语法非常好学，几分钟跟着就可以学习了，几乎所有的
 
 - 获取类对象的方法
 
-<img src="C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201129225723572.png" alt="image-20201129225723572" style="zoom:50%;" />
+<img src="https://i.loli.net/2020/12/15/LcuEqWYajwMSPr9.png" alt="image-20201129225723572" style="zoom:50%;" />
 
 # 2 Static
 
 - static先于对象被系统加载，所以静态方法不能调用非静态的，但是非静态的可以调用静态的
 
-![image-20201203075604403](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203075604403.png)
+![image-20201203075604403](https://i.loli.net/2020/12/19/yIBfRovl3LUeXHC.png)
 
 ## 2.1 静态代码块
 
-![image-20201203075819751](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203075819751.png)
+![image-20201203075819751](C:%5CUsers%5CDeon%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201203075819751.png)
 
 # 3 抽象类
 
-![image-20201203100950348](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203100950348.png)
+![image-20201203100950348](https://i.loli.net/2020/12/15/AwMKXnriahQCBS9.png)
 
-![image-20201203183621632](C:\Users\Deon\AppData\Roaming\Typora\typora-user-images\image-20201203183621632.png)
+![image-20201203183621632](https://i.loli.net/2020/12/19/mtaBi1EkfrA378l.png)
 
 # 4 Exception
 
 ![image-20201214144828928](https://i.loli.net/2020/12/14/lfWjG8QeNzKgBTn.png)
 
+# 5 Collection集合框架 - 保存对象List，Set，Map
+
+![image-20201214221952376](https://i.loli.net/2020/12/14/Wv5r4ML8sYU3BtO.png)
+
+![image-20201215104407696](https://i.loli.net/2020/12/15/1D2vU5xIcRjfJiq.png)
+
+- list和数组的区别在于，list可以自动扩容
