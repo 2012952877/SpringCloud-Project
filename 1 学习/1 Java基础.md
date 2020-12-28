@@ -128,3 +128,11 @@ markdown语法非常好学，几分钟跟着就可以学习了，几乎所有的
 ![image-20201215104407696](https://i.loli.net/2020/12/15/1D2vU5xIcRjfJiq.png)
 
 - list和数组的区别在于，list可以自动扩容
+
+## 5.1 Map
+
+![image-20201227121656395](https://i.loli.net/2020/12/27/WC6wSjAVRE9z3r8.png)
+
+### 5.1.1 HashMap和TreeMap
+
+![image-20201227122106378](https://i.loli.net/2020/12/27/iILBFsxoHXUr8fM.png)
