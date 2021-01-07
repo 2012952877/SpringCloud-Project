@@ -101,6 +101,131 @@ markdown语法非常好学，几分钟跟着就可以学习了，几乎所有的
 
 <img src="https://i.loli.net/2020/12/15/LcuEqWYajwMSPr9.png" alt="image-20201129225723572" style="zoom:50%;" />
 
+![image-20210106101741040](https://i.loli.net/2021/01/06/KND74YtaRwJW9OG.png)
+
+## 1.2 获取类对象的方法
+
+![image-20210106102102875](https://i.loli.net/2021/01/06/6NbEJWjBMrIGn4P.png)
+
+## 1.3 通过反射机制来操作对象
+
+![image-20210106104615855](https://i.loli.net/2021/01/06/AhzDPTi9jrk4fBK.png)
+
+![image-20210106104816449](https://i.loli.net/2021/01/06/6TGevw5M3WBEZSu.png)
+
+- getField和getDeclaredField的区别
+  这两个方法都是用于获取字段
+  getField **只能获取**public的，包括**从父类继承**来的字段。
+  getDeclaredField 可以获取本类所有的字段，**包括private**的，但是**不能获取继承**来的字段。 (**注**： 这里只能获取到private的**字段**，但并不能访问该private字段的**值**,除非加上**setAccessible(true)**)
+
+## 1.4 反射的用途 - 其实就是解决一个问题：某些代码如果要换参数，必须重新编译和运行
+
+反射非常强大，但是学习了之后，会不知道该如何使用，反而觉得还不如直接调用方法来的直接和方便。
+
+通常来说，需要在学习了[Spring ](https://how2j.cn/k/spring/spring-ioc-di/87.html)的依赖注入，反转控制之后，才会对反射有更好的理解，但是刚学到这里的同学，不一定接触了Spring，所以在这里举两个例子，来演示一下反射的一种实际运用。
+
+### 1.4.1 首先创建两个个 业务类
+
+这两个业务类很简单，就是各自都有一个业务方法，分别打印不同的字符串
+
+```java
+package reflection;
+
+public class Service1 {
+
+	public void doService1(){
+		System.out.println("业务方法1");
+	}
+}
+```
+```
+package reflection;
+
+public class Service2 {
+
+	public void doService2(){
+		System.out.println("业务方法2");
+	}
+}
+```
+
+### 1.4.2 使用非反射方式来处理
+
+当需要从第一个业务方法切换到第二个业务方法的时候，使用非反射方式，必须修改代码，并且重新编译运行，才可以达到效果
+
+```java
+package reflection;
+
+public class Test {
+
+	public static void main(String[] args) {
+		new Service1().doService1();
+	}
+}
+```
+
+```java
+package reflection;
+
+public class Test {
+
+	public static void main(String[] args) {
+//		new Service1().doService1();
+		new Service2().doService2();
+	}
+}
+```
+
+### 1.4.3 使用反射方式来处理 
+
+使用反射方式，首先准备一个配置文件，就叫做spring.txt吧, 放在src目录下。 里面存放的是类的名称，和要调用的方法名。
+在测试类Test中，首先取出类名称和方法名，然后通过反射去调用这个方法。
+
+当需要从调用第一个业务方法，切换到调用第二个业务方法的时候，不需要修改一行代码，也不需要重新编译，只需要修改配置文件spring.txt，再运行即可。
+
+这也是[Spring框架](https://how2j.cn/k/spring/spring-ioc-di/87.html)的最基本的原理，只是它做的更丰富，安全，健壮。
+
+```java
+class=reflection.Service1
+method=doService1
+```
+
+```java
+package reflection;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+import java.util.Properties;
+
+public class Test {
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static void main(String[] args) throws Exception {
+
+		//从spring.txt中获取类名称和方法名称
+		File springConfigFile = new File("e:\\project\\j2se\\src\\spring.txt");
+		Properties springConfig= new Properties();
+		springConfig.load(new FileInputStream(springConfigFile));
+		String className = (String) springConfig.get("class");
+		String methodName = (String) springConfig.get("method");
+		
+		//根据类名称获取类对象
+		Class clazz = Class.forName(className);
+		//根据方法名称，获取方法对象
+		Method m = clazz.getMethod(methodName);
+		//获取构造器
+		Constructor c = clazz.getConstructor();
+		//根据构造器，实例化出对象
+		Object service = c.newInstance();
+		//调用对象的指定方法
+		m.invoke(service);
+		
+	}
+}
+```
+
 # 2 Static
 
 - static先于对象被系统加载，所以静态方法不能调用非静态的，但是非静态的可以调用静态的
