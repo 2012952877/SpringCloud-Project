@@ -14,3 +14,17 @@
 
 # 3 目录结构-通用
 
+![image-20210119132619349](https://i.loli.net/2021/01/19/75PjWCeNSLyoh1a.png)
+
+## 3.1 创建一个maven项目
+
+![image-20210119133136685](https://i.loli.net/2021/01/19/Mq1cKoPrOegRXn3.png)
+
+![image-20210121113347915](https://i.loli.net/2021/01/21/vjwOmIXSa93eYKF.png)
+
+## 3.2 Maven命令
+
+- IDEA集成了这些命令，但是用图形化的界面封装了这些命令
+
+![image-20210121113555157](https://i.loli.net/2021/01/21/CpHnoKrVute4S1g.png)
+
